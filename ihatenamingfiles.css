@@ -1,0 +1,18 @@
+body {
+    background: #000;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game {
+    width: min(100vw, calc(400vh / 3));
+    image-rendering: pixelated;
+}
+
+@font-face {
+    font-family: '8bo';
+    src: url('font/8bitoperator.ttf');
+}

@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "lib": ["dom"],
+        "rootDir": "./src/",
+        "outFile": "./build.js"
+    },
+    "include":  [
+        "src/**/*.ts"
+    ]
+}
