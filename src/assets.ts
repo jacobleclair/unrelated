@@ -27,3 +27,16 @@ for (let img of [
 }
 
 // spritesheets
+const spritesheets : HTMLImageElement[] = [];
+
+for (let sheet of [
+    "frisk"
+]) {
+    const img = document.createElement("img");
+    img.src = "spritesheet/" + sheet + ".png";
+    spritesheets.push(img);
+}
+
+function drawSprite(sheet: number, boxX: number, boxY: number, boxW: number, boxH: number, destX : number, destY : number) {
+    const img = spritesheets[sheet];
+}
