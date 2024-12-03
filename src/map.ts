@@ -8,4 +8,6 @@ let facing = Directions.up;
 
 function drawMap() {
     ctx.clearRect(0, 0, 640, 480);
+
+    drawSprite(0, 3, 3, 20, 40, 100, 100);
 }

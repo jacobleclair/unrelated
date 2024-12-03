@@ -37,6 +37,7 @@ for (let sheet of [
     spritesheets.push(img);
 }
 
-function drawSprite(sheet: number, boxX: number, boxY: number, boxW: number, boxH: number, destX : number, destY : number) {
-    const img = spritesheets[sheet];
+// worst code formatting humanly possible.
+function drawSprite(           sheet: number, boxX: number, boxY: number, boxW: number, boxH: number, destX : number, destY : number) {
+    ctx.drawImage(spritesheets[sheet],        boxX,         boxY,         boxW,         boxH,         destX,          destY,            boxW, boxH);
 }
