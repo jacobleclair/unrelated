@@ -19,7 +19,8 @@ function play(id : number, loop : boolean) {
 const images : {[key: string] : HTMLImageElement} = {};
 
 for (let img of [
-    "title"
+    "title",
+    "ruins"
 ]) {
     const element = document.createElement("img");
     element.src = "img/" + img + ".png";
@@ -38,6 +39,6 @@ for (let sheet of [
 }
 
 // worst code formatting humanly possible.
-function drawSprite(           sheet: number, boxX: number, boxY: number, boxW: number, boxH: number, destX : number, destY : number) {
-    ctx.drawImage(spritesheets[sheet],        boxX,         boxY,         boxW,         boxH,         destX,          destY,            boxW, boxH);
+function drawSprite(           sheet: number, boxX: number, boxY: number, boxW: number, boxH: number, destX : number, destY : number, scale : number) {
+    ctx.drawImage(spritesheets[sheet],        boxX,         boxY,         boxW,         boxH,         destX,          destY,          scale * boxW, scale * boxH);
 }

@@ -12,4 +12,26 @@ window.addEventListener("keydown", function(e) {
     } else if (e.code === "KeyC") {
         for (let func of cHandlers) func();
     }
+
+    else if (e.code == "ArrowUp" || e.code == "KeyW") {
+        directions[0] = true;
+    } else if (e.code == "ArrowDown" || e.code == "KeyS") {
+        directions[1] = true;
+    } else if (e.code == "ArrowLeft" || e.code == "KeyA") {
+        directions[2] = true;
+    } else if (e.code == "ArrowRight" || e.code == "KeyD") {
+        directions[3] = true;
+    }
+});
+
+window.addEventListener("keyup", function(e) {
+    if (e.code == "ArrowUp" || e.code == "KeyW") {
+        directions[0] = false;
+    } else if (e.code == "ArrowDown" || e.code == "KeyS") {
+        directions[1] = false;
+    } else if (e.code == "ArrowLeft" || e.code == "KeyA") {
+        directions[2] = false;
+    } else if (e.code == "ArrowRight" || e.code == "KeyD") {
+        directions[3] = false;
+    }
 });
