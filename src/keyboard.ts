@@ -1,8 +1,8 @@
-const zHandlers : Function[] = [];
-const xHandlers : Function[] = [];
-const cHandlers : Function[] = [];
+const zHandlers : Function[] = []; // array of functions to call when z or enter is pressed
+const xHandlers : Function[] = []; // array of functions to call when x or shift is pressed
+const cHandlers : Function[] = []; // array of functions to call when c is pressed
 
-const directions : Boolean[] = [false, false, false, false]; // up, down, left, right
+const directions : Boolean[] = [false, false, false, false]; // which keys are pressed; up, down, left, right
 
 window.addEventListener("keydown", function(e) {
     if (e.code === "KeyZ" || e.code == "Enter") {
