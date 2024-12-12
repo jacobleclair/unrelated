@@ -7,7 +7,7 @@ const roomMappings : HTMLImageElement[] = [ // maps room to background; index of
 let playerX = 0; // x position of player
 let playerY = 0; // y posiion of player
 
-const speed = 10;   
+const speed = 5;   
 
 enum Directions { up, down, left, right };
 let facing = Directions.up; // direction that the player is facing
@@ -23,3 +23,5 @@ function drawMap() {
     playerX += (+directions[3] - +directions[2]) * speed;
     playerY += (+directions[1] - +directions[0]) * speed;
 }
+
+// TODO: use two collision boxes at bottom left of player to detect collision with bitmap. use getimage data when drawing bitmap to canvas
