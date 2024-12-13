@@ -41,7 +41,30 @@ for (let sheet of [ // this array holds the names of the spritesheets used. `./s
     spritesheets.push(img);
 }
 
-// worst code formatting humanly possible.
+// room mappings
+const roomMappings : HTMLImageElement[] = [ // maps room to background; index of image in this array corresponds to the room id
+    images.ruins
+];
+
+// rooms; specifically, collision boxes
+const colMaps : ImageData[] = [];
+
+const colMapCanvas = document.createElement("canvas");
+const colMapCanvasCtx = colMapCanvas.getContext("2d"); 
+colMapCanvas.width = 640;
+colMapCanvas.height = 480;
+
+for (let img of roomMappings) {
+    const bmpImg = document.createElement("img");
+    bmpImg.src = img.src.slice(0, -4) + ".bmp";
+
+    bmpImg.addEventListener("load", function() {
+        colMapCanvasCtx.drawImage(bmpImg, 0, 0);
+
+        colMaps.push(colMapCanvasCtx.getImageData(0, 0, 640, 480));
+    });
+}
+
 function drawSprite(sheet: number, boxX: number, boxY: number, boxW: number, boxH: number, destX : number, destY : number, scale : number) {
     // draws a sprite to the screen.
     // sheet: which sheet to use; the index of the spritesheet in the spritesheets array

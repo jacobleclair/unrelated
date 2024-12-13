@@ -1,9 +1,5 @@
 let room = 0; // the current room
 
-const roomMappings : HTMLImageElement[] = [ // maps room to background; index of image in this array corresponds to the room id
-    images.ruins
-];
-
 let playerX = 0; // x position of player
 let playerY = 0; // y posiion of player
 

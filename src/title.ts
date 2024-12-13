@@ -70,11 +70,6 @@ zHandlers.push(function() {
 //          \::/____/                \::/    /                \::/____/                \::/____/                \::/____/        
 //          ~~                       \/____/                  ~~                       ~~                                       
                                                                                                                     
-                        
-// ps: i hate debug
-
-
-
 window.addEventListener("keydown", function(e) {
     if (e.code === "Space") gameState = 1; // enter map immediately when space is pressed
 })
