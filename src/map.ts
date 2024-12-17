@@ -15,9 +15,20 @@ function drawMap() {
 
     drawSprite(0, 3, 3, 20, 30, 320, 240, 2); // draw sprite
 
+    // try to move the player
+
     // if you've never seen this, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus
     playerX += (+directions[3] - +directions[2]) * speed;
     playerY += (+directions[1] - +directions[0]) * speed;
-}
 
-// TODO: use two collision boxes at bottom left of player to detect collision with bitmap. use getimage data when drawing bitmap to canvas
+    // collision detection!
+    let hitWall = false;
+    if (colMaps[room].data[((playerY + 240 + 60) * 640 + (playerX + 320     )) * 4] === 255) hitWall = true; // bottom-left of player
+    if (colMaps[room].data[((playerY + 240 + 60) * 640 + (playerX + 320 + 40)) * 4] === 255) hitWall = true; // bottom-right of player
+
+    // if hit wall, undo movement
+    if (hitWall) {
+        playerX -= (+directions[3] - +directions[2]) * speed;
+        playerY -= (+directions[1] - +directions[0]) * speed;
+    }
+}
