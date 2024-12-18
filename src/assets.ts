@@ -62,6 +62,8 @@ for (let img of roomMappings) {
         colMapCanvasCtx.drawImage(bmpImg, 0, 0);
 
         colMaps.push(colMapCanvasCtx.getImageData(0, 0, 640, 480));
+
+        bmpImg.remove();
     });
 }
 
