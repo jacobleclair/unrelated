@@ -53,4 +53,7 @@ function drawMap() {
     if (hitWall) {
         playerY -= (+directions[1] - +directions[0]) * (i + 1);
     }
+
+    // dialogue
+    if (showDialogue) drawDialogue();
 }
