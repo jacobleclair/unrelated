@@ -13,8 +13,6 @@ function drawMap() {
 
     ctx.drawImage(roomMappings[room], 0 - playerX, 0 - playerY); // draw background
 
-    drawSprite(0, 3, 3, 20, 30, 320, 240, 2); // draw sprite
-
     // try to move the player; X
     let hitWall = false;
     let i;
@@ -34,7 +32,7 @@ function drawMap() {
         playerX -= (+directions[3] - +directions[2]) * (i + 1);
     }
 
-    drawSprite(0, 3, 3, 20, 30, 320, 240, 2); // draw sprite
+    drawSprite(0, 3, 3, 20, 30, 320, 240, 2, 2); // draw sprite
 
     // try to move the player; Y
     hitWall = false;

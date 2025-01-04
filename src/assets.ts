@@ -3,7 +3,8 @@ const musicElements : HTMLAudioElement[] = [];
 
 for (let audio of [ // this array holds the names of the audio to be added to musicElements. `./audio/${name}.mp3`
     "002",  // title
-    "intro" // fade sound effect on title screen
+    "intro", // fade sound effect on title screen
+    "debug/vine", // ;)
 ]) {
     const element = document.createElement("audio");
     element.src = "audio/" + audio + ".mp3";
@@ -15,6 +16,7 @@ function play(id : number, loop : boolean) {
     // id:   index of the audio name in the musicElements array.
     // loop: indicate if the audio should replay (true) or stop after the first iteration (false).            
     musicElements[id].loop = loop;
+    musicElements[id].currentTime = 0;
     musicElements[id].play();
 }
 
@@ -34,7 +36,14 @@ for (let img of [ // this array holds the names of the images to be used. `./img
 const spritesheets : HTMLImageElement[] = [];
 
 for (let sheet of [ // this array holds the names of the spritesheets used. `./spritesheet/${name}.png`
-    "frisk"
+    "frisk",
+    "alphys_dialogue",
+    "asgore_dialogue",
+    "asriel_dialogue",
+    "papyrus_dialogue",
+    "sans_dialogue",
+    "toriel_dialogue",
+    "undyne_dialogue"
 ]) {
     const img = document.createElement("img");
     img.src = "spritesheet/" + sheet + ".png";
@@ -67,7 +76,7 @@ for (let img of roomMappings) {
     });
 }
 
-function drawSprite(sheet: number, boxX: number, boxY: number, boxW: number, boxH: number, destX : number, destY : number, scale : number) {
+function drawSprite(sheet: number, boxX: number, boxY: number, boxW: number, boxH: number, destX : number, destY : number, scaleX : number, scaleY: number) {
     // draws a sprite to the screen.
     // sheet: which sheet to use; the index of the spritesheet in the spritesheets array
     // boxX:  cuts image out of spritesheet; x coordinate
@@ -76,6 +85,7 @@ function drawSprite(sheet: number, boxX: number, boxY: number, boxW: number, box
     // boxH:  cuts image out of spritesheet; height
     // destX: x position to draw image at
     // destY: y position to draw image at
-    // scale: multiplied by the original image size; increases the size of the image
-    ctx.drawImage(spritesheets[sheet], boxX, boxY, boxW, boxH, destX, destY, scale * boxW, scale * boxH);
+    // scaleX: multiplied by the original image size; increases the width of the image
+    // scaleY: multiplied by the original image size; increases the height of the image
+    ctx.drawImage(spritesheets[sheet], boxX, boxY, boxW, boxH, destX, destY, scaleX * boxW, scaleY * boxH);
 }

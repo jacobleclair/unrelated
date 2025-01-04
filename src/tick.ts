@@ -7,4 +7,4 @@ function tick() {
     } else if (gameState == 1) {
         drawMap();
     }
-}   
+}
